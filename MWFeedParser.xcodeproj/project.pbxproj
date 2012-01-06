@@ -42,7 +42,6 @@
 		4CC89609119F0CED00ED61B6 /* MWFeedParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CC89604119F0CED00ED61B6 /* MWFeedParser.m */; };
 		4CC8960A119F0CED00ED61B6 /* MWFeedInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CC89606119F0CED00ED61B6 /* MWFeedInfo.m */; };
 		4CC8960B119F0CED00ED61B6 /* MWFeedItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CC89608119F0CED00ED61B6 /* MWFeedItem.m */; };
-		4CC8960F119F0CFB00ED61B6 /* NSString+XMLEntities.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CC8960E119F0CFB00ED61B6 /* NSString+XMLEntities.m */; };
 		4CC89612119F0D0C00ED61B6 /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CC89611119F0D0C00ED61B6 /* RootViewController.m */; };
 /* End PBXBuildFile section */
 
@@ -112,8 +111,6 @@
 		4CC89606119F0CED00ED61B6 /* MWFeedInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MWFeedInfo.m; sourceTree = "<group>"; };
 		4CC89607119F0CED00ED61B6 /* MWFeedItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWFeedItem.h; sourceTree = "<group>"; };
 		4CC89608119F0CED00ED61B6 /* MWFeedItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MWFeedItem.m; sourceTree = "<group>"; };
-		4CC8960D119F0CFB00ED61B6 /* NSString+XMLEntities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+XMLEntities.h"; sourceTree = "<group>"; };
-		4CC8960E119F0CFB00ED61B6 /* NSString+XMLEntities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+XMLEntities.m"; sourceTree = "<group>"; };
 		4CC89610119F0D0C00ED61B6 /* RootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RootViewController.h; sourceTree = "<group>"; };
 		4CC89611119F0D0C00ED61B6 /* RootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* MWFeedParser-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "MWFeedParser-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
@@ -270,15 +267,6 @@
 			name = "Google Toolbox for Mac";
 			sourceTree = "<group>";
 		};
-		4C65F3151208638600606CFC /* Depreciated */ = {
-			isa = PBXGroup;
-			children = (
-				4CC8960D119F0CFB00ED61B6 /* NSString+XMLEntities.h */,
-				4CC8960E119F0CFB00ED61B6 /* NSString+XMLEntities.m */,
-			);
-			name = Depreciated;
-			sourceTree = "<group>";
-		};
 		4CC89602119F0CDE00ED61B6 /* MWFeedParser */ = {
 			isa = PBXGroup;
 			children = (
@@ -301,7 +289,6 @@
 				4C661F42125E3F2D007F1792 /* NSDate+InternetDateTime.h */,
 				4C661F43125E3F2D007F1792 /* NSDate+InternetDateTime.m */,
 				4C65F30F12085FF400606CFC /* Google Toolbox for Mac */,
-				4C65F3151208638600606CFC /* Depreciated */,
 			);
 			name = Categories;
 			sourceTree = "<group>";
@@ -397,7 +384,6 @@
 				4CC89609119F0CED00ED61B6 /* MWFeedParser.m in Sources */,
 				4CC8960A119F0CED00ED61B6 /* MWFeedInfo.m in Sources */,
 				4CC8960B119F0CED00ED61B6 /* MWFeedItem.m in Sources */,
-				4CC8960F119F0CFB00ED61B6 /* NSString+XMLEntities.m in Sources */,
 				4CC89612119F0D0C00ED61B6 /* RootViewController.m in Sources */,
 				4CAD0E1211DA03BD0086F5F8 /* DetailTableViewController.m in Sources */,
 				4C65F2EB12085ACE00606CFC /* GTMNSString+HTML.m in Sources */,

@@ -28,8 +28,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "KKNTapAndHoldGesture.h"
 
-@interface MWFeedParserAppDelegate : NSObject <UIApplicationDelegate> {
+@interface MWFeedParserAppDelegate : NSObject <UIApplicationDelegate>
+//    , KKNTapAndHoldGestureDelegate> 
+    {
     
     UIWindow *window;
     UINavigationController *navigationController;

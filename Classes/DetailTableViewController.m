@@ -94,6 +94,14 @@ typedef enum { SectionDetailSummary } DetailRows;
 	}
 }
 
+- (Boolean)isIpad{
+    if([UIDevice currentDevice].userInterfaceIdiom == UIUserInterfaceIdiomPad){
+        return YES;
+    }
+    
+    return NO;
+}
+
 // Customize the appearance of table view cells.
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
 
@@ -139,18 +147,20 @@ typedef enum { SectionDetailSummary } DetailRows;
 //                cell.backgroundColor = [UIColor clearColor];
 //                cell.selectionStyle = UITableViewCellSelectionStyleNone;    
                 
-                UITextView *textView = [[UITextView alloc] initWithFrame:[UIDevice currentDevice].userInterfaceIdiom == UIUserInterfaceIdiomPad?CGRectMake(50.0f, 0.0f, 650.0f, 540.0f):CGRectMake(10.0f, 0.0f, 285.0f, 240.0f)];
+                UITextView *textView = [[UITextView alloc] initWithFrame:[self isIpad]?CGRectMake(50.0f, 0.0f, 650.0f, 540.0f):CGRectMake(10.0f, 0.0f, 285.0f, 240.0f)];
                 [textView setText:summaryString];
                 [textView setBackgroundColor:[UIColor clearColor]];
                 [textView setEditable:NO];
                 [textView setFont:[UIFont systemFontOfSize:15]];
+//                textView.autoresizingMask = UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleTopMargin | UIViewAutoresizingFlexibleBottomMargin;
+                textView.scrollEnabled = YES;
                 [cell addSubview:textView];
                 [textView release];
 //				// Summary
 //				cell.textLabel.text = summaryString;
 //				cell.textLabel.numberOfLines = 0; // Multiline
 //                [cell.textLabel becomeFirstResponder];
-                cell.autoresizesSubviews = YES;
+//                cell.autoresizesSubviews = YES;
 				break;
 				
 			}
@@ -172,10 +182,10 @@ typedef enum { SectionDetailSummary } DetailRows;
 		// Get height of summary
 		NSString *summary = @"[No Summary]";
 		if (summaryString) summary = summaryString;
-		CGSize s = [summary sizeWithFont:[UIFont systemFontOfSize:15] 
-					   constrainedToSize:CGSizeMake(self.view.bounds.size.width - 40, MAXFLOAT)  // - 40 For cell padding
-						   lineBreakMode:UILineBreakModeWordWrap];
-		return s.height + 16; // Add padding
+//		CGSize s = [summary sizeWithFont:[UIFont systemFontOfSize:15] 
+//					   constrainedToSize:CGSizeMake(self.view.bounds.size.width - 40, MAXFLOAT)  // - 40 For cell padding
+//						   lineBreakMode:UILineBreakModeWordWrap];
+		return self.view.frame.size.height - ([self isIpad]?70:50 +  3 * 34); // Add padding
 		
 	}
 }

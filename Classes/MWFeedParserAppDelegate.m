@@ -52,6 +52,7 @@
     NSLog(@"view: %@", window);
     KKNTapAndHoldGesture* gesture = [[KKNTapAndHoldGesture alloc] initWithView:window];
     [window addGestureRecognizer:gesture];
+//    gesture.actionDelegate = self;
     [gesture release];
     
 	return YES;
@@ -60,6 +61,20 @@
 - (void)applicationWillTerminate:(UIApplication *)application {
 	// Save data if appropriate
 }
+
+//- (BOOL)tapAndHoldGesture:(KKNTapAndHoldGesture*)sender shouldHighlightView:(UIView*)view {
+//    NSLog(@"View: %@", view);
+//    return YES;
+//}
+//
+//- (UIView*)tapAndHoldGesture:(id)sender getHighlightableView:(UIView*)view {
+//    NSLog(@"View: %@", view);
+//    if ([view isKindOfClass:(NSClassFromString(@"UITableViewCellContentView"))]) {
+//        return ((UITableViewCell*)view.superview).textLabel;
+//    }
+//    
+//    return nil;
+//}
 
 #pragma mark -
 #pragma mark Memory management
