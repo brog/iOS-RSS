@@ -1,6 +1,8 @@
+iOS project allows the user to enter an RSS feed and read it on iOS devices (iPad/iPod/iPhone). It also makes use of kikin's EasySearch API to allow users to easily look up information in the text of the article.
 
 
-
+Project expanded open source RSS reader originally found here:
+https://github.com/mwaterfall/MWFeedParser
 
 ## Licence
 
