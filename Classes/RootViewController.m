@@ -31,6 +31,7 @@
 #import "NSString+HTML.h"
 #import "MWFeedParser.h"
 #import "DetailTableViewController.h"
+#import "NSDate-HumanInterval.h"
 
 @implementation RootViewController
 
@@ -100,11 +101,10 @@
 }
 
 - (void)editFeed {
-	NSLog(@"change feed url");
     UIAlertView * alert = [[UIAlertView alloc] initWithTitle:@"Feed URL" message:@"Enter the url of feed" delegate:self cancelButtonTitle:@"Update Feed" otherButtonTitles:nil];
     alert.alertViewStyle = UIAlertViewStylePlainTextInput;
     UITextField * alertTextField = [alert textFieldAtIndex:0];
-    alertTextField.keyboardType = UIKeyboardTypeNumberPad;
+    alertTextField.keyboardType = UIKeyboardTypeURL;
     alertTextField.placeholder = @"http://www.site.com/feed";
     alertTextField.text = feedURL.absoluteString;
     [alert show];
@@ -112,7 +112,7 @@
 }
 
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{ 
-    NSLog(@"Entered: %@",[[alertView textFieldAtIndex:0] text]);
+//    NSLog(@"Entered: %@",[[alertView textFieldAtIndex:0] text]);
     feedURL = [NSURL URLWithString: [[alertView textFieldAtIndex:0] text]];
 
     [self saveUrl];
@@ -203,7 +203,7 @@
 		cell.textLabel.font = [UIFont boldSystemFontOfSize:15];
 		cell.textLabel.text = itemTitle;
 		NSMutableString *subtitle = [NSMutableString string];
-		if (item.date) [subtitle appendFormat:@"%@: ", [formatter stringFromDate:item.date]];
+		if (item.date) [subtitle appendFormat:@"%@: ", [item.date humanIntervalSinceNow]];
 		[subtitle appendString:itemSummary];
 		cell.detailTextLabel.text = subtitle;
 		

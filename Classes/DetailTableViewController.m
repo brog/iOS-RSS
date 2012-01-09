@@ -60,7 +60,7 @@ typedef enum { SectionDetailSummary } DetailRows;
 	// Date
 	if (item.date) {
 		NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
-		[formatter setDateStyle:NSDateFormatterMediumStyle];
+		[formatter setDateStyle:NSDateFormatterShortStyle];
 		[formatter setTimeStyle:NSDateFormatterMediumStyle];
 		self.dateString = [formatter stringFromDate:item.date];
 		[formatter release];
@@ -136,8 +136,8 @@ typedef enum { SectionDetailSummary } DetailRows;
 						break;
 					case SectionHeaderURL:
 						cell.textLabel.text = item.link ? item.link : @"[No Link]";
-						cell.textLabel.textColor = [UIColor blueColor];
-						cell.selectionStyle = UITableViewCellSelectionStyleBlue;
+//						cell.textLabel.textColor = [UIColor blueColor];
+//						cell.selectionStyle = UITableViewCellSelectionStyleBlue;
 						break;
 				}
 				break;
@@ -185,7 +185,7 @@ typedef enum { SectionDetailSummary } DetailRows;
 //		CGSize s = [summary sizeWithFont:[UIFont systemFontOfSize:15] 
 //					   constrainedToSize:CGSizeMake(self.view.bounds.size.width - 40, MAXFLOAT)  // - 40 For cell padding
 //						   lineBreakMode:UILineBreakModeWordWrap];
-		return self.view.frame.size.height - ([self isIpad]?70:50 +  3 * 34); // Add padding
+		return self.view.frame.size.height - ([self isIpad]?190:50 +  (3 * 34) ); // Add padding
 		
 	}
 }
@@ -196,8 +196,8 @@ typedef enum { SectionDetailSummary } DetailRows;
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
 
 	// Open URL
-	if (indexPath.section == SectionHeader && indexPath.row == SectionHeaderURL) {
-		if (item.link) {
+	if (indexPath.section == SectionHeader) {// && indexPath.row == SectionHeaderURL
+//		if (item.link) {
 			//[[UIApplication sharedApplication] openURL:[NSURL URLWithString:item.link]];
             // Show detail
             WebViewController *webview = [[WebViewController alloc] init];
@@ -206,7 +206,7 @@ typedef enum { SectionDetailSummary } DetailRows;
             [self.navigationController pushViewController:webview animated:YES];
             [self.navigationController setTitle:item.title];
             [webview release];
-		}
+//		}
 	}
 	
 	// Deselect

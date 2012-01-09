@@ -14,6 +14,7 @@
 		2892E4100DC94CBA00A64D0F /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2892E40F0DC94CBA00A64D0F /* CoreGraphics.framework */; };
 		28AD73600D9D9599002E5188 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28AD735F0D9D9599002E5188 /* MainWindow.xib */; };
 		28F335F11007B36200424DE2 /* RootViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28F335F01007B36200424DE2 /* RootViewController.xib */; };
+		2C672ECE14BA912800A4FAE0 /* NSDate-HumanInterval.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C672ECD14BA912800A4FAE0 /* NSDate-HumanInterval.m */; };
 		2C801B0C14A2B23600A14ED1 /* MainWindow-iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2C801B0B14A2B23600A14ED1 /* MainWindow-iPad.xib */; };
 		2C801B1814A40B8800A14ED1 /* WebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C801B1614A40B8800A14ED1 /* WebViewController.m */; };
 		2C801B1D14A9228D00A14ED1 /* Icon_57x57.png in Resources */ = {isa = PBXBuildFile; fileRef = 2C801B1B14A9228D00A14ED1 /* Icon_57x57.png */; };
@@ -56,6 +57,8 @@
 		28AD735F0D9D9599002E5188 /* MainWindow.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainWindow.xib; sourceTree = "<group>"; };
 		28F335F01007B36200424DE2 /* RootViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RootViewController.xib; sourceTree = "<group>"; };
 		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		2C672ECC14BA912800A4FAE0 /* NSDate-HumanInterval.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate-HumanInterval.h"; sourceTree = "<group>"; };
+		2C672ECD14BA912800A4FAE0 /* NSDate-HumanInterval.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate-HumanInterval.m"; sourceTree = "<group>"; };
 		2C801B0B14A2B23600A14ED1 /* MainWindow-iPad.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = "MainWindow-iPad.xib"; path = "iPad/MainWindow-iPad.xib"; sourceTree = "<group>"; };
 		2C801B1514A40B8800A14ED1 /* WebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebViewController.h; sourceTree = "<group>"; };
 		2C801B1614A40B8800A14ED1 /* WebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebViewController.m; sourceTree = "<group>"; };
@@ -151,6 +154,8 @@
 				4CC89620119F0D1E00ED61B6 /* App */,
 				4CC89602119F0CDE00ED61B6 /* MWFeedParser */,
 				4CC8960C119F0CF000ED61B6 /* Categories */,
+				2C672ECC14BA912800A4FAE0 /* NSDate-HumanInterval.h */,
+				2C672ECD14BA912800A4FAE0 /* NSDate-HumanInterval.m */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -390,6 +395,7 @@
 				4C65F318120863F800606CFC /* NSString+HTML.m in Sources */,
 				4C661F44125E3F2D007F1792 /* NSDate+InternetDateTime.m in Sources */,
 				2C801B1814A40B8800A14ED1 /* WebViewController.m in Sources */,
+				2C672ECE14BA912800A4FAE0 /* NSDate-HumanInterval.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -444,13 +450,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
-				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_VERSION = "";
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				OTHER_LDFLAGS = "-ObjC";
+				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
@@ -459,7 +466,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
-				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_VERSION = "";
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
@@ -467,6 +474,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
 				OTHER_LDFLAGS = "-ObjC";
+				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos;
 			};
 			name = Release;
